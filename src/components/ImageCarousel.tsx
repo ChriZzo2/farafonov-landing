@@ -50,7 +50,7 @@ export default function ImageCarousel() {
     return (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
             <div className="relative group">
-                <div className="relative flex items-center justify-center bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 h-[500px] sm:h-[600px] md:h-[700px]">
+                <div className="relative flex items-center justify-center bg-gray-750 h-[500px] sm:h-[600px] md:h-[700px] rounded-xl">
                     <img
                         src={images[currentIndex]}
                         alt={`Фото ${currentIndex + 1}`}
@@ -94,9 +94,9 @@ export default function ImageCarousel() {
                         <button
                             key={idx}
                             onClick={() => setCurrentIndex(idx)}
-                            className={`relative flex-shrink-0 w-20 h-20 md:w-24 md:h-24 overflow-hidden transition-all duration-300 ${
+                            className={`relative flex-shrink-0 w-20 h-20 md:w-24 md:h-24 overflow-hidden rounded-lg transition-all duration-300 ${
                                 idx === currentIndex
-                                    ? 'scale-110 opacity-100'
+                                    ? 'scale-110 opacity-100 ring-2 ring-gray-400'
                                     : 'opacity-50 hover:opacity-80 hover:scale-105'
                             }`}
                         >
@@ -119,8 +119,8 @@ export default function ImageCarousel() {
                         onClick={() => setCurrentIndex(idx)}
                         className={`h-2 rounded-full transition-all duration-300 ${
                             idx === currentIndex
-                                ? 'bg-gray-800 w-8'
-                                : 'bg-gray-400 w-2'
+                                ? 'bg-gray-300 w-8'
+                                : 'bg-gray-500 w-2'
                         }`}
                         aria-label={`Go to image ${idx + 1}`}
                     />

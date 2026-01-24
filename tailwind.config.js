@@ -7,10 +7,10 @@ export default {
     theme: {
         extend: {
             colors: {
-                'primary': '#1F2937',      // Тёмно-серый
-                'accent': '#6B7280',       // Средний серый
-                'dark': '#111827',         // Почти чёрный
-                'light-bg': '#F9FAFB',     // Светло-серый фон
+                'primary': '#1F2937',
+                'accent': '#6B7280',
+                'dark': '#111827',
+                'light-bg': '#F9FAFB',
             },
             animation: {
                 'float': 'float 6s ease-in-out infinite',
