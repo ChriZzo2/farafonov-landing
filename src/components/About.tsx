@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import image1 from '../../public/image1.jpg'
 import image2 from '../../public/image2.jpg'
 import image3 from '../../public/image3.jpg'
@@ -10,27 +10,75 @@ import image8 from '../../public/image8.jpg'
 import image9 from '../../public/image9.jpg'
 import image10 from '../../public/image10.jpg'
 import image11 from '../../public/image11.jpg'
+import image12 from '../../public/image12.jpg'
+import image13 from '../../public/image13.jpg'
+import image14 from '../../public/image14.jpg'
+import image15 from '../../public/image15.jpg'
+import image16 from '../../public/image16.jpg'
+import image17 from '../../public/image17.jpg'
+import image18 from '../../public/image18.jpg'
+import image19 from '../../public/image19.jpg'
+import image20 from '../../public/image20.jpg'
+import image21 from '../../public/image21.jpg'
+import image22 from '../../public/image22.jpg'
+import image23 from '../../public/image23.jpg'
+import image24 from '../../public/image24.jpg'
+import image25 from '../../public/image25.jpg'
+import image26 from '../../public/image26.jpg'
+import image27 from '../../public/image27.jpg'
+import image28 from '../../public/image28.jpg'
+import image29 from '../../public/image29.jpg'
 
 export default function About() {
     const [showDiplomas, setShowDiplomas] = useState(false)
     const [showMedia, setShowMedia] = useState(false)
-    const [selectedImage, setSelectedImage] = useState<string | null>(null)
+    const [selectedImage, setSelectedImage] = useState<{ img: string, rotated: boolean } | null>(null)
+    const scrollContainerRef = useRef<HTMLDivElement>(null)
 
     const diplomas = [
-        image1,
-        image2,
-        image3,
-        image4,
-        image5,
-        image6,
-        image7,
-        image8,
-        image9,
-        image10,
-        image11,
+        { img: image28, rotated: false },
+        { img: image27, rotated: false },
+        { img: image2, rotated: false },
+        { img: image14, rotated: true },
+        { img: image25, rotated: false },
+        { img: image3, rotated: false },
+        { img: image10, rotated: false },
+        { img: image9, rotated: false },
+        { img: image1, rotated: false },
+        { img: image4, rotated: true },
+        { img: image5, rotated: false },
+        { img: image15, rotated: false },
+        { img: image16, rotated: false },
+        { img: image22, rotated: false },
+        { img: image23, rotated: false },
+        { img: image24, rotated: false },
+        { img: image26, rotated: false },
+        { img: image29, rotated: false },
+        { img: image11, rotated: false },
+        { img: image18, rotated: false },
+        { img: image19, rotated: false },
+        { img: image12, rotated: false },
+        { img: image17, rotated: false },
+        { img: image20, rotated: false },
+        { img: image6, rotated: false },
+        { img: image21, rotated: false },
+        { img: image13, rotated: false },
+        { img: image7, rotated: false },
+        { img: image8, rotated: false },
     ]
 
+    const scroll = (direction: 'left' | 'right') => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = 400
+            scrollContainerRef.current.scrollBy({
+                left: direction === 'left' ? -scrollAmount : scrollAmount,
+                behavior: 'smooth'
+            })
+        }
+    }
+
     const mediaLinks = [
+        { title: 'Банковское дело: Наши победы – в созидающей команде. Анатолий Фарафонов о карьере, стратегии АО «Первоуральскбанк» и личных вызовах', url: 'https://www.bankdelo.ru/interview/pub/10982?ysclid=mksmuv6zf8534061053', source: 'Банковское дело' },
         { title: 'АиФ: Отпуск отменяется? Гостиницы отказывают россиянам в размещении', url: 'https://aif.ru/travel/otpusk-otmenyaetsya-gostinicy-otkazyvayut-rossiyanam-v-razmeshchenii', source: 'АиФ' },
         { title: 'АиФ: Бабушки в Сети. Названы гаджеты, которые стоит иметь каждому пенсионеру', url: 'https://aif.ru/techno/gadgets/babushki-v-seti-nazvany-gadzhety-kotorye-stoit-imet-kazhdomu-pensioneru', source: 'АиФ' },
         { title: 'АиФ: Долги душат. Россияне могут получить кредитные каникулы в 2024 году', url: 'https://aif.ru/money/mymoney/dolgi_dushat_rossiyane_mogut_poluchit_kreditnye_kanikuly_v_2024_godu', source: 'АиФ' },
@@ -56,8 +104,8 @@ export default function About() {
         { name: 'Благотворительный фонд ЛАКИ', url: 'https://лакифонд.рф/?ysclid=mks85plnr5754257578', description: 'Помощь детям-сиротам и детям в трудной жизненной ситуации' },
         { name: 'Центр в Дубках', url: 'https://krizis-centr.ru/', description: 'Кризисный центр' },
         { name: 'Фонд Настенька', url: 'https://nastenka.ru/', description: 'Помощь детям с онкологическими заболеваниями' },
-        { name: 'Приют Шереметьевский', url: 'https://helpdog.ru/', description: 'Собачий приют' },
         { name: 'Фонд Онкологика', url: 'https://oncologica.ru/', description: 'Помощь онкобольным' },
+        { name: 'Приют Шереметьевский', url: 'https://helpdog.ru/', description: 'Собачий приют' },
     ]
 
     return (
@@ -77,15 +125,15 @@ export default function About() {
                         <ul className="space-y-2 ml-2">
                             <li className="flex items-start">
                                 <span className="text-gray-600 mr-2">•</span>
-                                <span>2003 г. — Российский биотехнологический университет (экономист, красный диплом)</span>
+                                <span><strong>2003 г.</strong> — Российский биотехнологический университет (экономист, красный диплом)</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-gray-600 mr-2">•</span>
-                                <span>2004 г. — Русский Университет Инноваций (политолог)</span>
+                                <span><strong>2004 г.</strong> — Русский Университет Инноваций (политолог)</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-gray-600 mr-2">•</span>
-                                <span>2011 г. — Первая национальная школа телевидения (тележурналист)</span>
+                                <span><strong>2011 г.</strong> — Первая национальная школа телевидения (тележурналист)</span>
                             </li>
                         </ul>
                     </div>
@@ -168,7 +216,7 @@ export default function About() {
                                 <span className="text-red-500 text-xl">💝</span>
                                 <div>
                                     <p className="font-semibold text-gray-800">Другие организации</p>
-                                    <p className="text-sm text-gray-600">Помощь иным благотворительным фондам</p>
+                                    <p className="text-sm text-gray-600">Помощь иным благотворительным фондам и приютам</p>
                                 </div>
                             </div>
                         </div>
@@ -216,59 +264,127 @@ export default function About() {
                     onClick={() => setShowDiplomas(!showDiplomas)}
                     className="bg-gradient-to-r from-gray-600 via-gray-700 to-gray-600 hover:from-gray-700 hover:via-gray-800 hover:to-gray-700 text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
-                    {showDiplomas ? '🔼 Скрыть дипломы' : '📜 Дипломы и благодарности'}
+                    {showDiplomas ? '🔼 Скрыть дипломы' : `📜 Дипломы и благодарности (${diplomas.length})`}
                 </button>
 
                 {showDiplomas && (
-                    <div className="mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 animate-fadeIn">
-                        {diplomas.map((diploma, idx) => (
-                            <div
-                                key={idx}
-                                onClick={() => setSelectedImage(diploma)}
-                                className="bg-white/90 rounded-xl md:rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl cursor-pointer group border border-gray-200"
-                                style={{ animationDelay: `${idx * 0.1}s` }}
-                            >
-                                <div className="relative">
-                                    <img
-                                        src={diploma}
-                                        alt={`Диплом ${idx + 1}`}
-                                        className="w-full h-auto object-contain"
-                                    />
-                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
-                                        <span className="text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity">🔍</span>
+                    <div className="mt-10 md:mt-12 animate-fadeIn">
+                        {/* Выделенные первые 2 диплома */}
+                        <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+                            {diplomas.slice(0, 2).map((diploma, idx) => (
+                                <div
+                                    key={idx}
+                                    onClick={() => setSelectedImage(diploma)}
+                                    className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-3xl cursor-pointer group border-4 border-yellow-400"
+                                >
+                                    <div className="p-3 bg-gradient-to-r from-yellow-400 to-amber-500">
+                                        <p className="text-white font-bold text-center">
+                                            {idx === 0 ? '🏛️ Грамота ГосДумы' : '🎖️ От Героя России'}
+                                        </p>
+                                    </div>
+                                    <div className="relative bg-gradient-to-br from-yellow-50 to-amber-50">
+                                        <img
+                                            src={diploma.img}
+                                            alt={`Главная награда ${idx + 1}`}
+                                            className={`w-full h-auto object-contain ${diploma.rotated ? '-rotate-90' : ''}`}
+                                        />
+                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
+                                            <span className="text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">🔍</span>
+                                        </div>
                                     </div>
                                 </div>
+                            ))}
+                        </div>
+
+                        {/* Горизонтальная прокрутка остальных */}
+                        <div className="relative -mx-4 px-4">
+                            <button
+                                onClick={() => scroll('left')}
+                                className="absolute left-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-xl rounded-full p-3 transition-all hover:scale-110 hidden md:block"
+                                aria-label="Прокрутить влево"
+                            >
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                                </svg>
+                            </button>
+
+                            <div
+                                ref={scrollContainerRef}
+                                className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth px-2 md:px-12 py-4"
+                                style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                            >
+                                {diplomas.slice(2).map((diploma, idx) => (
+                                    <div
+                                        key={idx + 2}
+                                        onClick={() => setSelectedImage(diploma)}
+                                        className={`flex-shrink-0 rounded-xl  overflow-visible transform hover:scale-105 transition-all duration-300  cursor-pointer  ${
+                                            diploma.rotated ? 'h-50 w-72' : 'w-72'
+                                        }`}
+                                    >
+                                        <div className="relative w-full h-full flex items-center justify-center">
+                                            <img
+                                                src={diploma.img}
+                                                alt={`Диплом ${idx + 3}`}
+                                                className={`object-contain ${
+                                                    diploma.rotated
+                                                        ? '-rotate-90 h-72 w-auto'
+                                                        : 'w-72 h-auto'
+                                                }`}
+                                            />
+                                            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center rounded-xl">
+                                                <span className="text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity">🔍</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                ))}
                             </div>
-                        ))}
+
+                            <button
+                                onClick={() => scroll('right')}
+                                className="absolute right-4 top-1/2 -translate-y-1/2 z-10 bg-white/90 hover:bg-white shadow-xl rounded-full p-3 transition-all hover:scale-110 hidden md:block"
+                                aria-label="Прокрутить вправо"
+                            >
+                                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <p className="text-gray-500 text-sm mt-6">💡 Прокрутите горизонтально или кликните на диплом для увеличения</p>
+                    </div>
+                )}
+
+                {/* Модальное окно с поддержкой поворота */}
+                {selectedImage && (
+                    <div
+                        className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
+                        onClick={() => setSelectedImage(null)}
+                    >
+                        <button
+                            onClick={() => setSelectedImage(null)}
+                            className="absolute top-4 right-4 text-white bg-white/20 hover:bg-white/30 rounded-full p-3 transition-all hover:scale-110 z-10"
+                            aria-label="Close"
+                        >
+                            <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                        <div className="relative w-full h-full flex items-center justify-center p-8">
+                            <img
+                                src={selectedImage.img}
+                                alt="Диплом в полном размере"
+                                className={`max-w-full max-h-full object-contain ${
+                                    selectedImage.rotated
+                                        ? '-rotate-90'
+                                        : 'animate-scaleIn'
+                                }`}
+                                style={selectedImage.rotated ? { willChange: 'transform' } : undefined}
+                                onClick={(e) => e.stopPropagation()}
+                            />
+                        </div>
                     </div>
                 )}
             </div>
-
-            {/* Модальное окно для просмотра изображения */}
-            {selectedImage && (
-                <div
-                    className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
-                    onClick={() => setSelectedImage(null)}
-                >
-                    <button
-                        onClick={() => setSelectedImage(null)}
-                        className="absolute top-4 right-4 text-white bg-white/20 hover:bg-white/30 rounded-full p-3 transition-all hover:scale-110 z-10"
-                        aria-label="Close"
-                    >
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                        </svg>
-                    </button>
-                    <div className="relative w-full h-full flex items-center justify-center">
-                        <img
-                            src={selectedImage}
-                            alt="Диплом в полном размере"
-                            className="max-w-full max-h-full object-contain animate-scaleIn"
-                            onClick={(e) => e.stopPropagation()}
-                        />
-                    </div>
-                </div>
-            )}
         </section>
     )
 }

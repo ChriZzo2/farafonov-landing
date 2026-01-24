@@ -104,7 +104,7 @@ export default function ImageCarousel() {
                                 src={img}
                                 alt={`Превью ${idx + 1}`}
                                 loading="lazy"
-                                className="w-full h-full object-cover"
+                                className="w-full h-full object-contain"
                             />
                         </button>
                     ))}
