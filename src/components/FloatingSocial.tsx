@@ -76,7 +76,7 @@ export default function FloatingSocial() {
                     </a>
 
                     <a
-                        href="https://instagram.com/farafonov_anatoly"
+                        href="https://www.instagram.com/anatol4?igsh=MWp5NmNsbjBuNzd6bg=="
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex flex-col items-center gap-1 active:scale-95 transition-transform"

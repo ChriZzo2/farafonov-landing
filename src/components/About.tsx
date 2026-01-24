@@ -178,7 +178,7 @@ export default function About() {
                         </button>
 
                         {showMedia && (
-                            <div className="mt-6 space-y-3 animate-fadeIn max-h-[600px] overflow-y-auto pr-2">
+                            <div className="mt-6 space-y-3 animate-fadeIn">
                                 {mediaLinks.map((link, idx) => (
                                     <a
                                         key={idx}
