@@ -3,10 +3,14 @@ import ImageCarousel from './components/ImageCarousel'
 import FloatingSocial from './components/FloatingSocial'
 import About from './components/About'
 import NewsSection from './components/NewsSection'
+import backgroundImage from './assets/background.jpg'
 
 function App() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-[#b0b0b0] via-[#a8a8a8] to-[#9a9a9a] pb-20 lg:pb-0">
+        <div
+            className="min-h-screen pb-20 lg:pb-0 bg-cover bg-center bg-fixed"
+            style={{ backgroundImage: `url(${backgroundImage})` }}
+        >
             <div className="relative z-10">
                 <FloatingSocial />
                 <Header />
@@ -14,7 +18,9 @@ function App() {
                 <About />
                 <NewsSection />
 
-                <footer className="text-center py-8 text-gray-700 text-sm border-t border-gray-500/30 bg-gray-400/10 backdrop-blur-sm">
+                <footer
+                    className="text-center py-8 text-gray-800 text-sm  "
+                >
                     <p>© 2026 Фарафонов Анатолий Анатольевич • Все права защищены</p>
                 </footer>
             </div>
