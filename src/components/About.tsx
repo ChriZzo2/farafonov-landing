@@ -62,85 +62,85 @@ export default function About() {
 
     return (
         <section className="max-w-5xl mx-auto px-4 py-12 md:py-20 animate-fadeIn">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 md:mb-12 text-white animate-slideUp">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-8 md:mb-12 text-gray-700 animate-slideUp">
                 Обо мне
             </h2>
 
-            <div className="bg-gradient-to-br from-gray-800 to-gray-900 rounded-2xl md:rounded-3xl shadow-2xl p-6 sm:p-8 md:p-12 lg:p-16 mb-10 md:mb-12 transform transition-all duration-500 hover:shadow-gray-700/50 hover:scale-[1.01] animate-scaleIn">
-                <div className="space-y-6 text-base sm:text-lg text-gray-200 leading-relaxed">
-                    <p className="font-semibold text-gray-100 text-lg sm:text-xl">
+            <div className="bg-white/60 backdrop-blur-sm rounded-2xl md:rounded-3xl shadow-xl p-6 sm:p-8 md:p-12 lg:p-16 mb-10 md:mb-12 transform transition-all duration-500 hover:shadow-2xl hover:scale-[1.01] animate-scaleIn border border-gray-300/50">
+                <div className="space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
+                    <p className="font-semibold text-gray-800 text-lg sm:text-xl">
                         📅 Дата рождения: 21 августа 1981 г., г. Москва
                     </p>
 
-                    <div className="border-l-4 border-gray-400 pl-6">
-                        <h3 className="font-bold text-gray-100 text-xl mb-3">🎓 Образование:</h3>
+                    <div className="border-l-4 border-gray-500 pl-6">
+                        <h3 className="font-bold text-gray-800 text-xl mb-3">🎓 Образование:</h3>
                         <ul className="space-y-2 ml-2">
                             <li className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span className="text-gray-300">2003 г. — Российский биотехнологический университет (экономист, красный диплом)</span>
+                                <span className="text-gray-600 mr-2">•</span>
+                                <span>2003 г. — Российский биотехнологический университет (экономист, красный диплом)</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span className="text-gray-300">2004 г. — Русский Университет Инноваций (политолог)</span>
+                                <span className="text-gray-600 mr-2">•</span>
+                                <span>2004 г. — Русский Университет Инноваций (политолог)</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span className="text-gray-300">2011 г. — Первая национальная школа телевидения (тележурналист)</span>
+                                <span className="text-gray-600 mr-2">•</span>
+                                <span>2011 г. — Первая национальная школа телевидения (тележурналист)</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div className="border-l-4 border-gray-400 pl-6">
-                        <h3 className="font-bold text-gray-100 text-xl mb-3">💼 Профессиональный опыт:</h3>
+                    <div className="border-l-4 border-gray-500 pl-6">
+                        <h3 className="font-bold text-gray-800 text-xl mb-3">💼 Профессиональный опыт:</h3>
                         <ul className="space-y-2 ml-2">
                             <li className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span className="text-gray-300"><strong>С 2019 г.</strong> — Банкир, Вице-президент банка</span>
+                                <span className="text-gray-600 mr-2">•</span>
+                                <span><strong>С 2019 г.</strong> — Банкир, Вице-президент банка</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span className="text-gray-300"><strong>2001-2003 гг.</strong> — Помощник депутата ГД ФС РФ III созыва</span>
+                                <span className="text-gray-600 mr-2">•</span>
+                                <span><strong>2001-2003 гг.</strong> — Помощник депутата ГД ФС РФ III созыва</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span className="text-gray-300"><strong>С 2025 г.</strong> — Советник Академии в Российской Академии Естественных Наук</span>
+                                <span className="text-gray-600 mr-2">•</span>
+                                <span><strong>С 2025 г.</strong> — Советник Академии в Российской Академии Естественных Наук</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span className="text-gray-300"><strong>С 2025 г.</strong> — Член секции Гуманитарных наук и творчества Европейской академии Естественных наук.</span>
+                                <span className="text-gray-600 mr-2">•</span>
+                                <span><strong>С 2025 г.</strong> — Член секции Гуманитарных наук и творчества Европейской академии Естественных наук.</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span className="text-gray-300"><strong>С 2025 г.</strong> — Помощник депутата ГД ФС РФ VIII созыва Ярослава Самылина</span>
+                                <span className="text-gray-600 mr-2">•</span>
+                                <span><strong>С 2025 г.</strong> — Помощник депутата ГД ФС РФ VIII созыва Ярослава Самылина</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div className="border-l-4 border-gray-400 pl-6">
-                        <h3 className="font-bold text-gray-100 text-xl mb-3">🏛️ Политическая деятельность:</h3>
+                    <div className="border-l-4 border-blue-500 pl-6">
+                        <h3 className="font-bold text-gray-800 text-xl mb-3">🏛️ Политическая деятельность:</h3>
                         <ul className="space-y-2 ml-2">
                             <li className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span className="text-gray-300"><strong>2022 г.</strong> — Участие в муниципальных выборах г. Москва (район Крылатское)</span>
+                                <span className="text-gray-600 mr-2">•</span>
+                                <span><strong>2022 г.</strong> — Участие в муниципальных выборах г. Москва (район Крылатское)</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span className="text-gray-300"><strong>2023 г.</strong> — Доверенное лицо кандидата на выборах Мэра Москвы</span>
+                                <span className="text-gray-600 mr-2">•</span>
+                                <span><strong>2023 г.</strong> — Доверенное лицо кандидата на выборах Мэра Москвы</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span className="text-gray-300"><strong>2024 г.</strong> — Доверенное лицо кандидата на выборах Президента РФ</span>
+                                <span className="text-gray-600 mr-2">•</span>
+                                <span><strong>2024 г.</strong> — Доверенное лицо кандидата на выборах Президента РФ</span>
                             </li>
                             <li className="flex items-start">
-                                <span className="text-gray-400 mr-2">•</span>
-                                <span className="text-gray-300"><strong>2024 г.</strong> — Кандидат в депутаты МосГорДумы (7 округ)</span>
+                                <span className="text-gray-600 mr-2">•</span>
+                                <span><strong>2024 г.</strong> — Кандидат в депутаты МосГорДумы (7 округ)</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div className="bg-gradient-to-r from-gray-700 to-gray-800 rounded-xl p-6 border-l-4 border-red-500">
-                        <h3 className="font-bold text-gray-100 text-xl mb-4">❤️ Благотворительность:</h3>
-                        <p className="mb-4 text-gray-300">Ежегодная помощь организациям. Имеются благодарственные письма:</p>
+                    <div className="bg-red-50/80 backdrop-blur-sm rounded-xl p-6 border-l-4 border-red-400">
+                        <h3 className="font-bold text-gray-800 text-xl mb-4">❤️ Благотворительность:</h3>
+                        <p className="mb-4 text-gray-700">Ежегодная помощь организациям. Имеются благодарственные письма:</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                             {charityOrgs.map((org, idx) => (
                                 <a
@@ -148,38 +148,38 @@ export default function About() {
                                     href={org.url}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-start gap-2 p-3 bg-gray-900 rounded-lg hover:shadow-md transition-all duration-300 hover:scale-105 group"
+                                    className="flex items-start gap-2 p-3 bg-white/90 rounded-lg hover:shadow-md transition-all duration-300 hover:scale-105 group"
                                 >
                                     <span className="text-red-500 text-xl">🔗</span>
                                     <div>
-                                        <p className="font-semibold text-gray-100 group-hover:text-white transition">{org.name}</p>
-                                        <p className="text-sm text-gray-400">{org.description}</p>
+                                        <p className="font-semibold text-gray-800 group-hover:text-red-600 transition">{org.name}</p>
+                                        <p className="text-sm text-gray-600">{org.description}</p>
                                     </div>
                                 </a>
                             ))}
-                            <div className="flex items-start gap-2 p-3 bg-gray-900 rounded-lg">
+                            <div className="flex items-start gap-2 p-3 bg-white/90 rounded-lg">
                                 <span className="text-red-500 text-xl">🎖️</span>
                                 <div>
-                                    <p className="font-semibold text-gray-100">Помощь бойцам СВО</p>
-                                    <p className="text-sm text-gray-400">Регулярная поддержка</p>
+                                    <p className="font-semibold text-gray-800">Помощь бойцам СВО</p>
+                                    <p className="text-sm text-gray-600">Регулярная поддержка</p>
                                 </div>
                             </div>
-                            <div className="flex items-start gap-2 p-3 bg-gray-900 rounded-lg">
+                            <div className="flex items-start gap-2 p-3 bg-white/90 rounded-lg">
                                 <span className="text-red-500 text-xl">💝</span>
                                 <div>
-                                    <p className="font-semibold text-gray-100">Другие организации</p>
-                                    <p className="text-sm text-gray-400">Помощь иным благотворительным фондам</p>
+                                    <p className="font-semibold text-gray-800">Другие организации</p>
+                                    <p className="text-sm text-gray-600">Помощь иным благотворительным фондам</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-gray-700 to-gray-800 rounded-xl p-6 border-l-4 border-blue-500">
-                        <h3 className="font-bold text-gray-100 text-xl mb-3">📺 Освещение в СМИ:</h3>
-                        <p className="mb-4 text-gray-300">Эксперт газеты "Аргументы и факты", выступал экспертом в эфире телеканала "Россия 1", эксперт URA.RU, газеты "Московские ведомости" и других изданий.</p>
+                    <div className="bg-blue-50/80 backdrop-blur-sm rounded-xl p-6 border-l-4 border-blue-500">
+                        <h3 className="font-bold text-gray-800 text-xl mb-3">📺 Освещение в СМИ:</h3>
+                        <p className="mb-4 text-gray-700">Эксперт газеты "Аргументы и факты", выступал экспертом в эфире телеканала "Россия 1", эксперт URA.RU, газеты "Московские ведомости" и других изданий.</p>
                         <button
                             onClick={() => setShowMedia(!showMedia)}
-                            className="bg-gradient-to-r from-gray-600 to-gray-700 hover:from-gray-700 hover:to-gray-800 text-white font-semibold py-2 px-6 rounded-full transition-all flex items-center gap-2 hover:scale-105"
+                            className="bg-gray-600 hover:bg-gray-700 text-white font-semibold py-2 px-6 rounded-full transition-all flex items-center gap-2 hover:scale-105 shadow-lg"
                         >
                             {showMedia ? '▼ Скрыть публикации' : `▶ Показать все публикации (${mediaLinks.length})`}
                         </button>
@@ -192,16 +192,16 @@ export default function About() {
                                         href={link.url}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="block p-4 bg-gray-900 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group border border-gray-700"
+                                        className="block p-4 bg-white/90 rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group border border-gray-200"
                                     >
                                         <div className="flex items-start justify-between gap-3">
                                             <div className="flex-1">
-                                                <span className="inline-block px-3 py-1 bg-blue-900 text-blue-200 text-xs font-semibold rounded-full mb-2">
+                                                <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full mb-2">
                                                     {link.source}
                                                 </span>
-                                                <p className="font-medium text-gray-200 group-hover:text-white transition leading-snug">{link.title}</p>
+                                                <p className="font-medium text-gray-800 group-hover:text-blue-600 transition leading-snug">{link.title}</p>
                                             </div>
-                                            <span className="text-blue-400 text-2xl group-hover:translate-x-1 transition-transform flex-shrink-0">→</span>
+                                            <span className="text-blue-600 text-2xl group-hover:translate-x-1 transition-transform flex-shrink-0">→</span>
                                         </div>
                                     </a>
                                 ))}
@@ -214,7 +214,7 @@ export default function About() {
             <div className="text-center">
                 <button
                     onClick={() => setShowDiplomas(!showDiplomas)}
-                    className="bg-gradient-to-r from-gray-700 via-gray-600 to-gray-700 hover:from-gray-800 hover:via-gray-700 hover:to-gray-800 text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300 hover:shadow-gray-600/50"
+                    className="bg-gradient-to-r from-gray-600 via-gray-700 to-gray-600 hover:from-gray-700 hover:via-gray-800 hover:to-gray-700 text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
                     {showDiplomas ? '🔼 Скрыть дипломы' : '📜 Дипломы и благодарности'}
                 </button>
@@ -225,7 +225,7 @@ export default function About() {
                             <div
                                 key={idx}
                                 onClick={() => setSelectedImage(diploma)}
-                                className="bg-gray-900 rounded-xl md:rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-gray-600/20 cursor-pointer group"
+                                className="bg-white/90 rounded-xl md:rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl cursor-pointer group border border-gray-200"
                                 style={{ animationDelay: `${idx * 0.1}s` }}
                             >
                                 <div className="relative">
