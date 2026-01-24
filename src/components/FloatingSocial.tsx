@@ -31,21 +31,6 @@ export default function FloatingSocial() {
             ВКонтакте
           </span>
                 </a>
-
-                <a
-                    href="https://www.instagram.com/anatol4?igsh=MWp5NmNsbjBuNzd6bg=="
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group relative"
-                    style={{ animationDelay: '0.2s' }}
-                >
-                    <div className="w-14 h-14 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white text-lg font-bold shadow-2xl transform transition-all duration-300 group-hover:scale-125 group-hover:shadow-pink-500/50 animate-float">
-                        IG
-                    </div>
-                    <span className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-            Instagram
-          </span>
-                </a>
             </div>
 
             {/* Мобильная версия - снизу */}
@@ -73,18 +58,6 @@ export default function FloatingSocial() {
                             VK
                         </div>
                         <span className="text-xs text-gray-600 font-medium">ВКонтакте</span>
-                    </a>
-
-                    <a
-                        href="https://www.instagram.com/anatol4?igsh=MWp5NmNsbjBuNzd6bg=="
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex flex-col items-center gap-1 active:scale-95 transition-transform"
-                    >
-                        <div className="w-12 h-12 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white text-base font-bold shadow-lg">
-                            IG
-                        </div>
-                        <span className="text-xs text-gray-600 font-medium">Instagram</span>
                     </a>
                 </div>
             </div>

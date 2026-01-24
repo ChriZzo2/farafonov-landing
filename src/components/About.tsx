@@ -31,6 +31,8 @@ export default function About() {
     ]
 
     const mediaLinks = [
+        { title: 'АиФ: Отпуск отменяется? Гостиницы отказывают россиянам в размещении', url: 'https://aif.ru/travel/otpusk-otmenyaetsya-gostinicy-otkazyvayut-rossiyanam-v-razmeshchenii', source: 'АиФ' },
+        { title: 'АиФ: Бабушки в Сети. Названы гаджеты, которые стоит иметь каждому пенсионеру', url: 'https://aif.ru/techno/gadgets/babushki-v-seti-nazvany-gadzhety-kotorye-stoit-imet-kazhdomu-pensioneru', source: 'АиФ' },
         { title: 'АиФ: Долги душат. Россияне могут получить кредитные каникулы в 2024 году', url: 'https://aif.ru/money/mymoney/dolgi_dushat_rossiyane_mogut_poluchit_kreditnye_kanikuly_v_2024_godu', source: 'АиФ' },
         { title: 'URA.RU: Экспертный комментарий о финансовой ситуации', url: 'https://m.ura.news/articles/1036288168', source: 'URA.RU' },
         { title: 'Первоуральскбанк: Новости банковского сектора', url: 'https://www.pervbank.ru/news/3096/', source: 'Первоуральскбанк' },

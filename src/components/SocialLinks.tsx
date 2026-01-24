@@ -27,18 +27,6 @@ export default function SocialLinks() {
                     <span className="text-sm sm:text-base font-medium text-gray-700">ВКонтакте</span>
                     <span className="text-xs text-gray-500">10K подписчиков</span>
                 </a>
-
-                <a
-                    href="https://instagram.com/farafonov_anatoly"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center gap-2 md:gap-3 group"
-                >
-                    <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-purple-500 via-pink-500 to-orange-500 rounded-full flex items-center justify-center text-white text-2xl sm:text-3xl font-bold shadow-xl transform group-hover:scale-110 transition">
-                        IG
-                    </div>
-                    <span className="text-sm sm:text-base font-medium text-gray-700">Instagram</span>
-                </a>
             </div>
         </section>
     )

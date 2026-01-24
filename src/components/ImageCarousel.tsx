@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import image1 from '../assets/image1.jpg'
 import image2 from '../assets/image2.jpg'
 import image3 from '../assets/image3.jpg'
@@ -8,10 +8,13 @@ import image6 from '../assets/image6.jpg'
 import image7 from '../assets/image7.jpg'
 import image8 from '../assets/image8.jpg'
 import image9 from '../assets/image9.jpg'
+import image10 from '../assets/image10.jpg'
+import image11 from '../assets/image11.jpg'
+import image12 from '../assets/image12.jpg'
 
 export default function ImageCarousel() {
     const [currentIndex, setCurrentIndex] = useState(0)
-    const imgRef = useRef<HTMLImageElement>(null)
+    const [isTransitioning, setIsTransitioning] = useState(false)
 
     const images = [
         image3,
@@ -23,86 +26,92 @@ export default function ImageCarousel() {
         image6,
         image7,
         image8,
+        image10,
+        image11,
+        image12,
     ]
 
+    const changeImage = (newIndex: number) => {
+        setIsTransitioning(true)
+        setTimeout(() => {
+            setCurrentIndex(newIndex)
+            setIsTransitioning(false)
+        }, 200)
+    }
+
     const nextImage = () => {
-        setCurrentIndex((prev) => (prev + 1) % images.length)
+        changeImage((currentIndex + 1) % images.length)
     }
 
     const prevImage = () => {
-        setCurrentIndex((prev) => (prev - 1 + images.length) % images.length)
+        changeImage((currentIndex - 1 + images.length) % images.length)
     }
 
     return (
-        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20 animate-fadeIn">
+        <section className="max-w-7xl mx-auto px-4 sm:px-6 py-12 md:py-20">
             <div className="relative group">
-                {/* Основное изображение */}
-                <div className="relative overflow-hidden rounded-3xl shadow-2xl bg-gradient-to-b from-gray-50 to-gray-100">
+                <div className="relative flex items-center justify-center bg-gradient-to-b from-gray-100 via-gray-50 to-gray-100 h-[500px] sm:h-[600px] md:h-[700px]">
                     <img
-                        ref={imgRef}
-                        key={currentIndex}
                         src={images[currentIndex]}
                         alt={`Фото ${currentIndex + 1}`}
                         loading="lazy"
-                        className="w-full h-[500px] sm:h-[600px] md:h-[700px] object-contain animate-fadeIn"
+                        className={`w-full h-full object-contain transition-all duration-500 ${
+                            isTransitioning ? 'opacity-0 scale-95' : 'opacity-100 scale-100'
+                        }`}
                     />
 
-                    {/* Счетчик фото */}
-                    <div className="absolute top-6 right-6 z-20 bg-black/60 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium">
+                    {/* Счетчик */}
+                    <div className="absolute top-4 right-4 bg-black/70 backdrop-blur-sm text-white px-3 py-1.5 rounded-full text-xs font-medium">
                         {currentIndex + 1} / {images.length}
                     </div>
+
+                    {/* Кнопки - более элегантные */}
+                    <button
+                        onClick={prevImage}
+                        className="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-900 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110 opacity-0 group-hover:opacity-100"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+
+                    <button
+                        onClick={nextImage}
+                        className="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-900/80 hover:bg-gray-900 text-white p-3 rounded-full backdrop-blur-sm transition-all duration-300 hover:scale-110 opacity-0 group-hover:opacity-100"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
-
-                {/* Кнопки навигации */}
-                <button
-                    onClick={prevImage}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-black/70 hover:bg-black/90 text-white p-4 md:p-5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:-translate-x-1 opacity-0 group-hover:opacity-100"
-                    aria-label="Previous image"
-                >
-                    <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M15 19l-7-7 7-7" />
-                    </svg>
-                </button>
-
-                <button
-                    onClick={nextImage}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-black/70 hover:bg-black/90 text-white p-4 md:p-5 rounded-full shadow-2xl transition-all duration-300 transform hover:scale-110 hover:translate-x-1 opacity-0 group-hover:opacity-100"
-                    aria-label="Next image"
-                >
-                    <svg className="w-6 h-6 md:w-7 md:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
-                    </svg>
-                </button>
             </div>
 
 
-            {/* Превью миниатюр */}
+            {/* Превью миниатюр - БЕЗ рамок */}
             <div className="mt-6 md:mt-8 overflow-x-auto scrollbar-hide">
                 <div className="flex gap-3 md:gap-4 justify-start md:justify-center min-w-max md:min-w-0 px-2">
                     {images.map((img, idx) => (
                         <button
                             key={idx}
                             onClick={() => setCurrentIndex(idx)}
-                            className={`relative flex-shrink-0 w-20 h-20 md:w-24 md:h-24 rounded-xl overflow-hidden transition-all duration-300 ${
+                            className={`relative flex-shrink-0 w-20 h-20 md:w-24 md:h-24 overflow-hidden transition-all duration-300 ${
                                 idx === currentIndex
-                                    ? 'ring-4 ring-primary shadow-xl scale-110'
-                                    : 'opacity-60 hover:opacity-100 hover:scale-105'
+                                    ? 'scale-110 opacity-100'
+                                    : 'opacity-50 hover:opacity-80 hover:scale-105'
                             }`}
                         >
                             <img
                                 src={img}
                                 alt={`Превью ${idx + 1}`}
+                                loading="lazy"
                                 className="w-full h-full object-cover"
                             />
-                            {idx === currentIndex && (
-                                <div className="absolute inset-0 bg-gradient-to-t from-primary/50 to-transparent"></div>
-                            )}
                         </button>
                     ))}
                 </div>
             </div>
 
-            {/* Индикаторы (точки) - для мобилки */}
+            {/* Индикаторы (точки) - БЕЗ рамок */}
             <div className="flex md:hidden justify-center gap-2 mt-6 px-4">
                 {images.map((_, idx) => (
                     <button
@@ -110,8 +119,8 @@ export default function ImageCarousel() {
                         onClick={() => setCurrentIndex(idx)}
                         className={`h-2 rounded-full transition-all duration-300 ${
                             idx === currentIndex
-                                ? 'bg-gradient-to-r from-primary to-accent w-8 shadow-lg'
-                                : 'bg-gray-300 w-2'
+                                ? 'bg-gray-800 w-8'
+                                : 'bg-gray-400 w-2'
                         }`}
                         aria-label={`Go to image ${idx + 1}`}
                     />
