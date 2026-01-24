@@ -33,9 +33,9 @@ export default function About() {
     const mediaLinks = [
         { title: 'АиФ: Долги душат. Россияне могут получить кредитные каникулы в 2024 году', url: 'https://aif.ru/money/mymoney/dolgi_dushat_rossiyane_mogut_poluchit_kreditnye_kanikuly_v_2024_godu', source: 'АиФ' },
         { title: 'URA.RU: Экспертный комментарий о финансовой ситуации', url: 'https://m.ura.news/articles/1036288168', source: 'URA.RU' },
-        { title: 'Первый Банк: Новости банковского сектора', url: 'https://www.pervbank.ru/news/3096/', source: 'Первый Банк' },
+        { title: 'Первоуральскбанк: Новости банковского сектора', url: 'https://www.pervbank.ru/news/3096/', source: 'Первоуральскбанк' },
         { title: 'АиФ: Выше инфляции. В 2024 году в России вырастут пенсии, пособия и маткапитал', url: 'https://aif.ru/money/mymoney/vyshe_inflyacii_v_2024_godu_v_rossii_vyrastut_pensii_posobiya_i_matkapital', source: 'АиФ' },
-        { title: 'Первый Банк: Аналитика и прогнозы', url: 'https://www.pervbank.ru/news/3093/', source: 'Первый Банк' },
+        { title: 'Первоуральскбанк: Аналитика и прогнозы', url: 'https://www.pervbank.ru/news/3093/', source: 'Первоуральскбанк' },
         { title: 'АиФ: Пятое по счёту. Экономисты оценили влияние повышения ставки ЦБ на цены', url: 'https://aif.ru/money/economy/pyatoe_po_schetu_ekonomisty_ocenili_vliyanie_povysheniya_stavki_cb_na_ceny', source: 'АиФ' },
         { title: 'АиФ: Курс на сбережение. Экономисты прогнозируют рост ключевой ставки ЦБ до 16%', url: 'https://aif.ru/money/economy/kurs_na_sberezhenie_ekonomisty_prognoziruyut_rost_klyuchevoy_stavki_cb_do_16', source: 'АиФ' },
         { title: 'Московские Ведомости: Политики и зоозащитники московского региона обсудили проблемы', url: 'https://mosvedomosti.ru/2023/11/30/политики-и-зоозащитники-московского/', source: 'Московские Ведомости' },
