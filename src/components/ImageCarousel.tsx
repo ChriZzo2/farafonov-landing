@@ -18,17 +18,17 @@ export default function ImageCarousel() {
 
     const images = [
         image3,
-        image9,
+        image10,
+        image12,
+        image8,
         image1,
+        image9,
         image2,
         image4,
         image5,
         image6,
         image7,
-        image8,
-        image10,
         image11,
-        image12,
     ]
 
     const changeImage = (newIndex: number) => {
