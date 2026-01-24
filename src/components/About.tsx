@@ -279,7 +279,7 @@ export default function About() {
                                 >
                                     <div className="p-3 bg-gradient-to-r from-yellow-400 to-amber-500">
                                         <p className="text-white font-bold text-center">
-                                            {idx === 0 ? '🏛️ Грамота ГосДумы' : '🎖️ От Героя России'}
+                                            {idx === 0 ? '🏛️ Благодарственное письмо ГосДумы' : '🎖️ Благодарственное письмо от Героя России'}
                                         </p>
                                     </div>
                                     <div className="relative bg-gradient-to-br from-yellow-50 to-amber-50">
