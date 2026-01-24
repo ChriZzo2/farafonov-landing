@@ -1,15 +1,60 @@
 import { useState } from 'react'
+import image1 from '../../public/image1.jpg'
+import image2 from '../../public/image2.jpg'
+import image3 from '../../public/image3.jpg'
+import image4 from '../../public/image4.jpg'
+import image5 from '../../public/image5.jpg'
+import image6 from '../../public/image6.jpg'
+import image7 from '../../public/image7.jpg'
+import image8 from '../../public/image8.jpg'
+import image9 from '../../public/image9.jpg'
+import image10 from '../../public/image10.jpg'
+import image11 from '../../public/image11.jpg'
 
 export default function About() {
     const [showDiplomas, setShowDiplomas] = useState(false)
+    const [showMedia, setShowMedia] = useState(false)
+    const [selectedImage, setSelectedImage] = useState<string | null>(null)
 
     const diplomas = [
-        '/images/diploma1.jpg',
-        '/images/diploma2.jpg',
-        '/images/diploma3.jpg',
-        '/images/diploma4.jpg',
-        '/images/diploma5.jpg',
-        '/images/diploma6.jpg',
+        image1,
+        image2,
+        image3,
+        image4,
+        image5,
+        image6,
+        image7,
+        image8,
+        image9,
+        image10,
+        image11,
+    ]
+
+    const mediaLinks = [
+        { title: 'АиФ: Долги душат. Россияне могут получить кредитные каникулы в 2024 году', url: 'https://aif.ru/money/mymoney/dolgi_dushat_rossiyane_mogut_poluchit_kreditnye_kanikuly_v_2024_godu', source: 'АиФ' },
+        { title: 'URA.RU: Экспертный комментарий о финансовой ситуации', url: 'https://m.ura.news/articles/1036288168', source: 'URA.RU' },
+        { title: 'Первый Банк: Новости банковского сектора', url: 'https://www.pervbank.ru/news/3096/', source: 'Первый Банк' },
+        { title: 'АиФ: Выше инфляции. В 2024 году в России вырастут пенсии, пособия и маткапитал', url: 'https://aif.ru/money/mymoney/vyshe_inflyacii_v_2024_godu_v_rossii_vyrastut_pensii_posobiya_i_matkapital', source: 'АиФ' },
+        { title: 'Первый Банк: Аналитика и прогнозы', url: 'https://www.pervbank.ru/news/3093/', source: 'Первый Банк' },
+        { title: 'АиФ: Пятое по счёту. Экономисты оценили влияние повышения ставки ЦБ на цены', url: 'https://aif.ru/money/economy/pyatoe_po_schetu_ekonomisty_ocenili_vliyanie_povysheniya_stavki_cb_na_ceny', source: 'АиФ' },
+        { title: 'АиФ: Курс на сбережение. Экономисты прогнозируют рост ключевой ставки ЦБ до 16%', url: 'https://aif.ru/money/economy/kurs_na_sberezhenie_ekonomisty_prognoziruyut_rost_klyuchevoy_stavki_cb_do_16', source: 'АиФ' },
+        { title: 'Московские Ведомости: Политики и зоозащитники московского региона обсудили проблемы', url: 'https://mosvedomosti.ru/2023/11/30/политики-и-зоозащитники-московского/', source: 'Московские Ведомости' },
+        { title: 'АиФ: Как узнать кредитную историю', url: 'https://aif.ru/money/mymoney/kak_uznat_kreditnuyu_istoriyu', source: 'АиФ' },
+        { title: 'АиФ: Приказано посчитать. С 1 декабря изменится метод учёта доходов пенсионеров', url: 'https://aif.ru/money/economy/prikazano_poschitat_s_1_dekabrya_izmenitsya_metod_ucheta_dohodov_pensionerov', source: 'АиФ' },
+        { title: 'АиФ: Выплаты и новая ипотека. Россиян ожидает повышение пенсий с 1 ноября', url: 'https://aif.ru/money/mymoney/vyplaty_i_novaya_ipoteka_rossiyan_ozhidaet_povyshenie_pensiy_s_1_noyabrya', source: 'АиФ' },
+        { title: 'Московские Ведомости: Московские политики обсудили проблемы района', url: 'https://mosvedomosti.ru/2023/10/04/московские-политики-обсудили-пробле/', source: 'Московские Ведомости' },
+        { title: 'VMO24: Расклад на МосГорДуму. Какие партии имеют шансы на победу', url: 'https://vmo24.ru/news/rasklad_na_mosgordumu_kakie_partii_imeyut_shansy_na_pobedu', source: 'VMO24' },
+        { title: 'ActualNews: Анатолий Фарафонов: ДЭГ стал неизменным атрибутом выборов в России', url: 'https://actualnews.org/exclusive/480943-anatolij-farafonov-djeg-stal-neizmennym-atributom-vyborov-v-rossii.html', source: 'ActualNews' },
+        { title: 'Вестник: Публикация о политической деятельности', url: 'https://vestnik.net/post/76434/', source: 'Вестник' },
+        { title: 'VMO24: Новые люди предложили установить в Москве фонтанчики с питьевой водой', url: 'https://vmo24.ru/news/novye_lyudi_predlozhili_ustanovit_v_moskve_fontanchiki_s_pitevoy_vodoy', source: 'VMO24' },
+    ]
+
+    const charityOrgs = [
+        { name: 'Дом для Мамы', url: 'https://domdliamamy.ru/', description: 'Кризисный центр помощи женщинам' },
+        { name: 'Центр в Дубках', url: 'https://krizis-centr.ru/', description: 'Кризисный центр' },
+        { name: 'Фонд Настенька', url: 'https://nastenka.ru/', description: 'Помощь детям с онкологическими заболеваниями' },
+        { name: 'Приют Шереметьевский', url: 'https://helpdog.ru/', description: 'Собачий приют' },
+        { name: 'Фонд Онкологика', url: 'https://oncologica.ru/', description: 'Помощь онкобольным' },
     ]
 
     return (
@@ -47,7 +92,7 @@ export default function About() {
                         <ul className="space-y-2 ml-2">
                             <li className="flex items-start">
                                 <span className="text-accent mr-2">•</span>
-                                <span><strong>С 2019 г.</strong> — Вице-президент банка</span>
+                                <span><strong>С 2019 г.</strong> — Банкир, Вице-президент банка</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-accent mr-2">•</span>
@@ -55,11 +100,11 @@ export default function About() {
                             </li>
                             <li className="flex items-start">
                                 <span className="text-accent mr-2">•</span>
-                                <span><strong>С 2025 г.</strong> — Советник Академии в РАЕН</span>
+                                <span><strong>С 2025 г.</strong> — Советник Академии в Российской Академии Естественных Наук</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-accent mr-2">•</span>
-                                <span><strong>С 2025 г.</strong> — Помощник депутата ГД ФС РФ VIII созыва</span>
+                                <span><strong>С 2025 г.</strong> — Помощник депутата ГД ФС РФ VIII созыва Ярослава Самылина</span>
                             </li>
                         </ul>
                     </div>
@@ -69,23 +114,92 @@ export default function About() {
                         <ul className="space-y-2 ml-2">
                             <li className="flex items-start">
                                 <span className="text-accent mr-2">•</span>
-                                <span>2022-2024 гг. — Участие в выборах разных уровней</span>
+                                <span><strong>2022 г.</strong> — Участие в муниципальных выборах г. Москва (район Крылатское)</span>
                             </li>
                             <li className="flex items-start">
                                 <span className="text-accent mr-2">•</span>
-                                <span>Доверенное лицо кандидатов на выборах Президента РФ и Мэра Москвы</span>
+                                <span><strong>2023 г.</strong> — Доверенное лицо кандидата на выборах Мэра Москвы</span>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-accent mr-2">•</span>
+                                <span><strong>2024 г.</strong> — Доверенное лицо кандидата на выборах Президента РФ</span>
+                            </li>
+                            <li className="flex items-start">
+                                <span className="text-accent mr-2">•</span>
+                                <span><strong>2024 г.</strong> — Кандидат в депутаты МосГорДумы (7 округ)</span>
                             </li>
                         </ul>
                     </div>
 
-                    <div className="bg-gradient-to-r from-accent/10 to-primary/10 rounded-xl p-6">
-                        <h3 className="font-bold text-primary text-xl mb-3">❤️ Благотворительность:</h3>
-                        <p>Ежегодная помощь кризисным центрам, фондам, приютам для животных, бойцам СВО. Имеются благодарственные письма.</p>
+                    <div className="bg-gradient-to-r from-red-50 to-pink-50 rounded-xl p-6 border-l-4 border-red-400">
+                        <h3 className="font-bold text-primary text-xl mb-4">❤️ Благотворительность:</h3>
+                        <p className="mb-4">Ежегодная помощь организациям. Имеются благодарственные письма:</p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                            {charityOrgs.map((org, idx) => (
+                                <a
+                                    key={idx}
+                                    href={org.url}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex items-start gap-2 p-3 bg-white rounded-lg hover:shadow-md transition-all duration-300 hover:scale-105 group"
+                                >
+                                    <span className="text-red-500 text-xl">🔗</span>
+                                    <div>
+                                        <p className="font-semibold text-gray-800 group-hover:text-primary transition">{org.name}</p>
+                                        <p className="text-sm text-gray-600">{org.description}</p>
+                                    </div>
+                                </a>
+                            ))}
+                            <div className="flex items-start gap-2 p-3 bg-white rounded-lg">
+                                <span className="text-red-500 text-xl">🎖️</span>
+                                <div>
+                                    <p className="font-semibold text-gray-800">Помощь бойцам СВО</p>
+                                    <p className="text-sm text-gray-600">Регулярная поддержка</p>
+                                </div>
+                            </div>
+                            <div className="flex items-start gap-2 p-3 bg-white rounded-lg">
+                                <span className="text-red-500 text-xl">💝</span>
+                                <div>
+                                    <p className="font-semibold text-gray-800">Другие организации</p>
+                                    <p className="text-sm text-gray-600">Помощь иным благотворительным фондам</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="bg-gradient-to-r from-primary/10 to-blue-100 rounded-xl p-6">
-                        <h3 className="font-bold text-primary text-xl mb-3">📺 Экспертная деятельность:</h3>
-                        <p>Эксперт "Аргументы и факты", "Россия 1", URА.RU, "Московские ведомости".</p>
+                    <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6 border-l-4 border-blue-500">
+                        <h3 className="font-bold text-primary text-xl mb-3">📺 Освещение в СМИ:</h3>
+                        <p className="mb-4">Эксперт газеты "Аргументы и факты", выступал экспертом в эфире телеканала "Россия 1", эксперт URA.RU, газеты "Московские ведомости" и других изданий.</p>
+                        <button
+                            onClick={() => setShowMedia(!showMedia)}
+                            className="bg-primary hover:bg-primary/90 text-white font-semibold py-2 px-6 rounded-full transition-all flex items-center gap-2 hover:scale-105"
+                        >
+                            {showMedia ? '▼ Скрыть публикации' : `▶ Показать все публикации (${mediaLinks.length})`}
+                        </button>
+
+                        {showMedia && (
+                            <div className="mt-6 space-y-3 animate-fadeIn max-h-[600px] overflow-y-auto pr-2">
+                                {mediaLinks.map((link, idx) => (
+                                    <a
+                                        key={idx}
+                                        href={link.url}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="block p-4 bg-white rounded-lg hover:shadow-lg transition-all duration-300 hover:scale-[1.02] group border border-gray-100"
+                                    >
+                                        <div className="flex items-start justify-between gap-3">
+                                            <div className="flex-1">
+                                                <span className="inline-block px-3 py-1 bg-blue-100 text-primary text-xs font-semibold rounded-full mb-2">
+                                                    {link.source}
+                                                </span>
+                                                <p className="font-medium text-gray-800 group-hover:text-primary transition leading-snug">{link.title}</p>
+                                            </div>
+                                            <span className="text-primary text-2xl group-hover:translate-x-1 transition-transform flex-shrink-0">→</span>
+                                        </div>
+                                    </a>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>
@@ -103,19 +217,51 @@ export default function About() {
                         {diplomas.map((diploma, idx) => (
                             <div
                                 key={idx}
-                                className="bg-white rounded-xl md:rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20"
+                                onClick={() => setSelectedImage(diploma)}
+                                className="bg-white rounded-xl md:rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20 cursor-pointer group"
                                 style={{ animationDelay: `${idx * 0.1}s` }}
                             >
-                                <img
-                                    src={diploma}
-                                    alt={`Диплом ${idx + 1}`}
-                                    className="w-full h-auto object-contain"
-                                />
+                                <div className="relative">
+                                    <img
+                                        src={diploma}
+                                        alt={`Диплом ${idx + 1}`}
+                                        className="w-full h-auto object-contain"
+                                    />
+                                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-all duration-300 flex items-center justify-center">
+                                        <span className="text-white text-4xl opacity-0 group-hover:opacity-100 transition-opacity">🔍</span>
+                                    </div>
+                                </div>
                             </div>
                         ))}
                     </div>
                 )}
             </div>
+
+            {/* Модальное окно для просмотра изображения */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <button
+                        onClick={() => setSelectedImage(null)}
+                        className="absolute top-4 right-4 text-white bg-white/20 hover:bg-white/30 rounded-full p-3 transition-all hover:scale-110 z-10"
+                        aria-label="Close"
+                    >
+                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                    <div className="relative w-full h-full flex items-center justify-center">
+                        <img
+                            src={selectedImage}
+                            alt="Диплом в полном размере"
+                            className="max-w-full max-h-full object-contain animate-scaleIn"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </div>
+                </div>
+            )}
         </section>
     )
 }

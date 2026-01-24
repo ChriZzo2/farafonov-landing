@@ -13,7 +13,7 @@ export default function FloatingSocial() {
                         TG
                     </div>
                     <span className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-            Telegram • 11K подписчиков
+            Telegram
           </span>
                 </a>
 
@@ -28,12 +28,12 @@ export default function FloatingSocial() {
                         VK
                     </div>
                     <span className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-            ВКонтакте • 10K подписчиков
+            ВКонтакте
           </span>
                 </a>
 
                 <a
-                    href="https://instagram.com/farafonov_anatoly"
+                    href="https://www.instagram.com/anatol4?igsh=MWp5NmNsbjBuNzd6bg=="
                     target="_blank"
                     rel="noopener noreferrer"
                     className="group relative"

@@ -1,6 +1,6 @@
 export default function Header() {
     return (
-        <header className="relative text-center py-16 md:py-24 px-4 overflow-hidden bg-gradient-to-br from-primary via-blue-600 to-accent">
+        <header className="relative text-center py-16 md:py-24 px-4 overflow-hidden bg-gradient-to-b from-primary via-blue-600 to-transparent">
             {/* Анимированный фон */}
             <div className="absolute inset-0 opacity-20">
                 <div className="absolute top-20 left-10 w-72 h-72 bg-white rounded-full blur-3xl animate-float"></div>
@@ -15,9 +15,6 @@ export default function Header() {
                     Финансист • Политик • Общественный деятель
                 </p>
             </div>
-
-            {/* Декоративные элементы */}
-            <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-light-bg to-transparent"></div>
         </header>
     )
 }
