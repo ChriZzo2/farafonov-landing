@@ -39,7 +39,9 @@ export default function About() {
         { img: image8, rotated: false },
         { img: image23, rotated: false },
         { img: image28, rotated: false },
+        { img: image21, rotated: false },
         { img: image16, rotated: false },
+        { img: image1, rotated: false },
         { img: image22, rotated: false },
         { img: image27, rotated: false },
         { img: image2, rotated: false },
@@ -48,7 +50,6 @@ export default function About() {
         { img: image3, rotated: false },
         { img: image10, rotated: false },
         { img: image9, rotated: false },
-        { img: image1, rotated: false },
         { img: image4, rotated: true },
         { img: image5, rotated: false },
         { img: image15, rotated: false },
@@ -62,7 +63,6 @@ export default function About() {
         { img: image17, rotated: false },
         { img: image20, rotated: false },
         { img: image6, rotated: false },
-        { img: image21, rotated: false },
         { img: image13, rotated: false },
         { img: image7, rotated: false },
     ]
@@ -229,7 +229,7 @@ export default function About() {
                             onClick={() => setShowMedia(!showMedia)}
                             className="bg-gray-600 hover:bg-gray-700 text-white font-semibold py-2 px-6 rounded-full transition-all flex items-center gap-2 hover:scale-105 shadow-lg"
                         >
-                            {showMedia ? '▼ Скрыть публикации' : `▶ Показать все публикации (${mediaLinks.length})`}
+                            {showMedia ? '▼ Скрыть публикации' : `▶ Показать все публикации`}
                         </button>
 
                         {showMedia && (
@@ -264,7 +264,7 @@ export default function About() {
                     onClick={() => setShowDiplomas(!showDiplomas)}
                     className="bg-gradient-to-r from-gray-600 via-gray-700 to-gray-600 hover:from-gray-700 hover:via-gray-800 hover:to-gray-700 text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-8 sm:px-12 rounded-full shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
-                    {showDiplomas ? '🔼 Скрыть дипломы' : `📜 Дипломы и благодарности (${diplomas.length})`}
+                    {showDiplomas ? '🔼 Скрыть дипломы' : `📜 Дипломы и благодарности`}
                 </button>
 
                 {showDiplomas && (
