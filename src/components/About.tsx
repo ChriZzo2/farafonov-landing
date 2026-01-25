@@ -292,7 +292,7 @@ export default function About() {
                                         key={idx + 2}
                                         onClick={() => setSelectedImage(diploma)}
                                         className={`flex-shrink-0 rounded-xl  overflow-visible transform hover:scale-105 transition-all duration-300  cursor-pointer  ${
-                                            diploma.rotated ? 'h-50 w-72' : 'w-72'
+                                            diploma.rotated ? 'h-[400px] w-72' : 'w-72'
                                         }`}
                                     >
                                         <div className="relative w-full h-full flex items-center justify-center">
@@ -301,8 +301,8 @@ export default function About() {
                                                 alt={`Диплом ${idx + 3}`}
                                                 className={`object-contain ${
                                                     diploma.rotated
-                                                        ? '-rotate-90 h-72 w-auto'
-                                                        : 'w-72 h-auto'
+                                                        ? '-rotate-90 w-[200px] h-72'
+                                                        : 'w-72 h-[350px]'
                                                 }`}
                                             />
                                             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center rounded-xl">
@@ -331,7 +331,7 @@ export default function About() {
                 {/* Модальное окно с поддержкой поворота */}
                 {selectedImage && (
                     <div
-                        className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4 animate-fadeIn"
+                        className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center animate-fadeIn"
                         onClick={() => setSelectedImage(null)}
                     >
                         <button
@@ -343,21 +343,22 @@ export default function About() {
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg>
                         </button>
-                        <div className="relative w-full h-full flex items-center justify-center p-8">
-                            <img
-                                src={selectedImage.img}
-                                alt="Диплом в полном размере"
-                                className={`max-w-full max-h-full object-contain ${
-                                    selectedImage.rotated
-                                        ? '-rotate-90'
-                                        : 'animate-scaleIn'
-                                }`}
-                                style={selectedImage.rotated ? { willChange: 'transform' } : undefined}
-                                onClick={(e) => e.stopPropagation()}
-                            />
-                        </div>
+                        <img
+                            src={selectedImage.img}
+                            alt="Диплом в полном размере"
+                            className={selectedImage.rotated ? '-rotate-90' : ''}
+                            style={{
+                                maxWidth: selectedImage.rotated ? '90vh' : '90vw',
+                                maxHeight: selectedImage.rotated ? '90vw' : '90vh',
+                                width: 'auto',
+                                height: 'auto',
+                                objectFit: 'contain'
+                            }}
+                            onClick={(e) => e.stopPropagation()}
+                        />
                     </div>
                 )}
+
             </div>
         </section>
     )
