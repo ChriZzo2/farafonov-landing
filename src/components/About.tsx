@@ -28,6 +28,8 @@ import image26 from '../../public/image26.jpg'
 import image27 from '../../public/image27.jpg'
 import image28 from '../../public/image28.jpg'
 import image29 from '../../public/image29.jpg'
+import image30 from '../../public/image30.jpg'
+import image31 from '../../public/image31.jpg'
 
 export default function About() {
     const [showDiplomas, setShowDiplomas] = useState(false)
@@ -48,6 +50,8 @@ export default function About() {
         { img: image14, rotated: true },
         { img: image25, rotated: false },
         { img: image3, rotated: false },
+        { img: image30, rotated: false },
+        { img: image31, rotated: false },
         { img: image10, rotated: false },
         { img: image9, rotated: false },
         { img: image4, rotated: true },
