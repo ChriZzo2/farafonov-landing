@@ -36,7 +36,11 @@ export default function About() {
     const scrollContainerRef = useRef<HTMLDivElement>(null)
 
     const diplomas = [
+        { img: image8, rotated: false },
+        { img: image23, rotated: false },
         { img: image28, rotated: false },
+        { img: image16, rotated: false },
+        { img: image22, rotated: false },
         { img: image27, rotated: false },
         { img: image2, rotated: false },
         { img: image14, rotated: true },
@@ -48,9 +52,6 @@ export default function About() {
         { img: image4, rotated: true },
         { img: image5, rotated: false },
         { img: image15, rotated: false },
-        { img: image16, rotated: false },
-        { img: image22, rotated: false },
-        { img: image23, rotated: false },
         { img: image24, rotated: false },
         { img: image26, rotated: false },
         { img: image29, rotated: false },
@@ -64,7 +65,6 @@ export default function About() {
         { img: image21, rotated: false },
         { img: image13, rotated: false },
         { img: image7, rotated: false },
-        { img: image8, rotated: false },
     ]
 
     const scroll = (direction: 'left' | 'right') => {
@@ -117,7 +117,7 @@ export default function About() {
             <div className="bg-white/60 backdrop-blur-sm rounded-2xl md:rounded-3xl shadow-xl p-6 sm:p-8 md:p-12 lg:p-16 mb-10 md:mb-12 transform transition-all duration-500 hover:shadow-2xl hover:scale-[1.01] animate-scaleIn border border-gray-300/50">
                 <div className="space-y-6 text-base sm:text-lg text-gray-700 leading-relaxed">
                     <p className="font-semibold text-gray-800 text-lg sm:text-xl">
-                        📅 Дата рождения: 21 августа 1981 г., г. Москва
+                        📅 Дата рождения: 21 августа 1981 г., г.&nbsp;Москва
                     </p>
 
                     <div className="border-l-4 border-gray-500 pl-6">
@@ -269,32 +269,6 @@ export default function About() {
 
                 {showDiplomas && (
                     <div className="mt-10 md:mt-12 animate-fadeIn">
-                        {/* Выделенные первые 2 диплома */}
-                        <div className="mb-8 grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-                            {diplomas.slice(0, 2).map((diploma, idx) => (
-                                <div
-                                    key={idx}
-                                    onClick={() => setSelectedImage(diploma)}
-                                    className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 hover:shadow-3xl cursor-pointer group border-4 border-yellow-400"
-                                >
-                                    <div className="p-3 bg-gradient-to-r from-yellow-400 to-amber-500">
-                                        <p className="text-white font-bold text-center">
-                                            {idx === 0 ? '🏛️ Благодарственное письмо ГосДумы' : '🎖️ Благодарственное письмо от Героя России'}
-                                        </p>
-                                    </div>
-                                    <div className="relative bg-gradient-to-br from-yellow-50 to-amber-50">
-                                        <img
-                                            src={diploma.img}
-                                            alt={`Главная награда ${idx + 1}`}
-                                            className={`w-full h-auto object-contain ${diploma.rotated ? '-rotate-90' : ''}`}
-                                        />
-                                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300 flex items-center justify-center">
-                                            <span className="text-white text-5xl opacity-0 group-hover:opacity-100 transition-opacity">🔍</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
-                        </div>
 
                         {/* Горизонтальная прокрутка остальных */}
                         <div className="relative -mx-4 px-4">
@@ -313,7 +287,7 @@ export default function About() {
                                 className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth px-2 md:px-12 py-4"
                                 style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
                             >
-                                {diplomas.slice(2).map((diploma, idx) => (
+                                {diplomas.map((diploma, idx) => (
                                     <div
                                         key={idx + 2}
                                         onClick={() => setSelectedImage(diploma)}
